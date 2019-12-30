@@ -1,4 +1,1 @@
-﻿  Museum.cpp
-C:\Users\Alex Lung\Desktop\G3D Project\Museum\Museum\Museum.cpp(427,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  LINK : C:\Users\Alex Lung\Desktop\G3D Project\Museum\Debug\Museum.exe not found or not built by the last incremental link; performing full link
-  Museum.vcxproj -> C:\Users\Alex Lung\Desktop\G3D Project\Museum\Debug\Museum.exe
+﻿  Museum.vcxproj -> C:\Users\Joni\source\repos\Grafica3D\Muzeu\Debug\Museum.exe
