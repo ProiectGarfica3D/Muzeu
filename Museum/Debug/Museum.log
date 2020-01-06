@@ -1,3 +1,0 @@
-﻿  Museum.cpp
-C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum.cpp(427,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Museum.vcxproj -> C:\Users\Joni\source\repos\Grafica3D\Muzeu\Debug\Museum.exe
