@@ -32,12 +32,6 @@
     <None Include="ShadowMappingDepth.vs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="skybox.fs">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="skybox.vs">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OBJ_Loader.h">
