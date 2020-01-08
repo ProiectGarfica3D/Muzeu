@@ -628,10 +628,10 @@ void main(int argc, char** argv)
 
 	// load textures
 	// -------------
-	unsigned int dinosaurTexture = CreateTexture(strExePath + "\\dinosaur.jpg");
+	unsigned int dinosaurTexture = CreateTexture(strExePath + "\\gold.jpg");
 	unsigned int floorTexture = CreateTexture(strExePath + "\\ColoredFloor.png");
-	unsigned int wallTexture = CreateTexture(strExePath + "\\Wall.jpg");
-	unsigned int dodoBirdtexture = CreateTexture(strExePath + "\\dinosaur.jpg");
+	unsigned int wallTexture = CreateTexture(strExePath + "\\brick.jpg");
+	unsigned int dodoBirdtexture = CreateTexture(strExePath + "\\dodo.jpg");
 
 	// configure depth map FBO
 	// -----------------------
@@ -724,7 +724,7 @@ void main(int argc, char** argv)
 		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 		glClear(GL_DEPTH_BUFFER_BIT);
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, floorTexture);
+		glBindTexture(GL_TEXTURE_2D, dodoBirdtexture);
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
 		renderDiamond(shadowMappingDepthShader);
@@ -795,7 +795,7 @@ void main(int argc, char** argv)
 		renderScene(shadowMappingShader);
 
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, floorTexture);
+		glBindTexture(GL_TEXTURE_2D, dodoBirdtexture);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, depthMap);
 		glDisable(GL_CULL_FACE);
@@ -809,7 +809,7 @@ void main(int argc, char** argv)
 		renderWall(shadowMappingShader);
 
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, dinosaurTexture);
+		glBindTexture(GL_TEXTURE_2D, dodoBirdtexture);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, depthMap);
 		glDisable(GL_CULL_FACE);
@@ -937,11 +937,11 @@ void renderFloor()
 void renderWall(const Shader& shader)
 {
 	glm::mat4 model;
-	model = glm::mat4();
-	model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(2.f));
-	shader.SetMat4("model", model);
-	Room1();
+	//model = glm::mat4();
+	//model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
+	//model = glm::scale(model, glm::vec3(2.f));
+	//shader.SetMat4("model", model);
+	//Room1();
 
 	model = glm::mat4();
 	model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f));
@@ -1055,13 +1055,11 @@ void renderDino(const Shader& shader)
 	shader.SetMat4("model", model);
 	renderCube();
 
-	// duck
-	/*model = glm::mat4();
+	model = glm::mat4();
 	model = glm::translate(model, glm::vec3(0.0f, 0.99f, 0.0f));
 	model = glm::scale(model, glm::vec3(0.75f));
 	shader.SetMat4("model", model);
-	renderDodo();
-	*/
+	
 
 	model = glm::mat4();
 	model = glm::translate(model, glm::vec3(0.0f, 0.99f, 0.0f));
@@ -1096,7 +1094,7 @@ void dodoBird()
 		std::vector<float> indicess;
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/dodo.obj");
+		Loader.LoadFile("dodo.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
@@ -1181,21 +1179,21 @@ void diamond()
 		std::vector<float> indicess;
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/hotballoon.obj");
+		Loader.LoadFile("duck.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+5);
-			verticess.push_back((float)curMesh.Vertices[j].Position.Y+5);
+			verticess.push_back((float)curMesh.Vertices[j].Position.X+3);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.X+5);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Y + 5);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X+3);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y );
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X+5);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y + 5);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X+3);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
 		}
 		for (int j = 0; j < verticess.size(); j++)
 		{
@@ -1234,6 +1232,16 @@ void diamond()
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
+
+		// render Cube
+		glBindVertexArray(dodoVAO);
+		glBindBuffer(GL_ARRAY_BUFFER, dodoVBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, dodoEBO);
+		int indexArraySize;
+		glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &indexArraySize);
+		glDrawElements(GL_TRIANGLES, indexArraySize / sizeof(unsigned int), GL_UNSIGNED_INT, 0);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
 	}
 }
 
@@ -1247,20 +1255,20 @@ void upperDino()
 		std::vector<float> indicess;
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/Trex.obj");
+		Loader.LoadFile("Trex.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[1];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 1.5);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 1.5);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 1.5);
 			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
 		}
 		for (int j = 0; j < verticess.size(); j++)
@@ -1308,7 +1316,7 @@ void upperDino()
 	int indexArraySize;
 	glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &indexArraySize);
 	glDrawElements(GL_TRIANGLES, indexArraySize / sizeof(unsigned int), GL_UNSIGNED_INT, 0);
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glDrawArrays(GL_TRIANGLES, 0, 46);
 	glBindVertexArray(0);
 }
 
@@ -1323,21 +1331,21 @@ void bottomDino()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/Trex.obj");
+		Loader.LoadFile("Trex.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+10);
-			verticess.push_back((float)curMesh.Vertices[j].Position.Y );
-			verticess.push_back((float)curMesh.Vertices[j].Position.Z );
-			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 10);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Y );
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Z );
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 10);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y );
+			verticess.push_back((float)curMesh.Vertices[j].Position.X+1.5);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 1.5);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 1.5);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
 		}
 		for (int j = 0; j < verticess.size(); j++)
 		{
@@ -1399,7 +1407,7 @@ void Room()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
@@ -1477,7 +1485,7 @@ void Room1()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		for (int i = 0; i < Loader.LoadedMeshes.size(); i++)
 		{
 			object::Mesh curMesh = Loader.LoadedMeshes[1];
@@ -1557,7 +1565,7 @@ void Room2()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		for (int i = 0; i < Loader.LoadedMeshes.size(); i++)
 		{
 			object::Mesh curMesh = Loader.LoadedMeshes[2];
@@ -1637,7 +1645,7 @@ void Room3()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[3];
 		int size = curMesh.Vertices.size();
 
@@ -1715,7 +1723,7 @@ void Room4()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[4];
 		int size = curMesh.Vertices.size();
 
@@ -1793,7 +1801,7 @@ void Room5()
 
 
 
-		Loader.LoadFile("D:/Visual Studio Projects/Grafica 3D/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[5];
 		int size = curMesh.Vertices.size();
 
