@@ -32,7 +32,7 @@ const unsigned int SCR_HEIGHT = 1000;
 
 
 enum ECameraMovementType
-{	
+{
 	UNKNOWN,
 	FORWARD,
 	BACKWARD,
@@ -371,140 +371,7 @@ private:
 private:
 	unsigned int ID;
 };
-class Skybox
-{
-public:
-	
 
-private:
-	unsigned int cubemapTexture;
-
-	GLuint VAO;
-	GLuint VBO;
-
-	Shader* shader;
-
-
-public:
-	Skybox()
-	{
-		GLfloat skyboxVertices[108] =
-		{
-			// positions          
-			-1.0f,  1.0f, -1.0f,
-			-1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f,  1.0f, -1.0f,
-			-1.0f,  1.0f, -1.0f,
-
-			-1.0f, -1.0f,  1.0f,
-			-1.0f, -1.0f, -1.0f,
-			-1.0f,  1.0f, -1.0f,
-			-1.0f,  1.0f, -1.0f,
-			-1.0f,  1.0f,  1.0f,
-			-1.0f, -1.0f,  1.0f,
-
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-
-			-1.0f, -1.0f,  1.0f,
-			-1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f, -1.0f,  1.0f,
-			-1.0f, -1.0f,  1.0f,
-
-			-1.0f,  1.0f, -1.0f,
-			1.0f,  1.0f, -1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			-1.0f,  1.0f,  1.0f,
-			-1.0f,  1.0f, -1.0f,
-
-			-1.0f, -1.0f, -1.0f,
-			-1.0f, -1.0f,  1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-			-1.0f, -1.0f,  1.0f,
-			1.0f, -1.0f,  1.0f
-		};
-
-		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &VBO);
-		glBindVertexArray(VAO);
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-
-		std::vector<std::string> faces
-		{
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/right.jpg",
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/left.jpg",
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/top.jpg",
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/bottom.jpg",
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/front.jpg",
-			"C:/Users/Alex Lung/Desktop/MuzeuNEw/Museum/Debug/back.jpg"
-		};
-
-		cubemapTexture = loadCubemap(faces);
-
-		Shader skyboxShader("skybox.vs", "skybox.fs");
-
-		skyboxShader.Use();
-		skyboxShader.SetInt("skybox", 0);
-	}
-		void Draw(const glm::mat4 & view, const glm::mat4 & projection)
-		{
-			glDepthFunc(GL_LEQUAL);
-			shader->Use();
-			shader->SetMat4("view", glm::mat4(glm::mat3(view)));
-			shader->SetMat4("projection", projection);
-			// skybox cube
-			glBindVertexArray(VAO);
-			glActiveTexture(GL_TEXTURE0);
-			glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-			glDrawArrays(GL_TRIANGLES, 0, 36);
-			glBindVertexArray(0);
-			glDepthFunc(GL_LESS);
-		}
-
-		GLuint loadCubemap(std::vector<std::string> faces)
-		{
-			unsigned int textureID;
-			glGenTextures(1, &textureID);
-			glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-			int width, height, nrChannels;
-			for (unsigned int i = 0; i < faces.size(); i++)
-			{
-				unsigned char* data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
-				if (data)
-				{
-					glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-					stbi_image_free(data);
-				}
-				else
-				{
-					printf("Stb can't load this sh*t: %s\n", faces[i].c_str());
-					stbi_image_free(data);
-				}
-			}
-			glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-			glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-			glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
-			return textureID;
-		}
-
-};
 Camera* pCamera = nullptr;
 
 unsigned int CreateTexture(const std::string& strTexturePath)
@@ -556,22 +423,25 @@ void renderCube();
 void renderDodoBird(const Shader& shader);
 void renderDino(const Shader& shader);
 void bottomDino();
-void renderFloor(); 
+void renderFloor();
 void renderWall(const Shader& shader);
 void dodoBird();
+void duck();
+void renderDuck(const Shader& shader);
+void statue();
+void renderStatue(const Shader& shader);
 
 void Room();
-
 void Room1();
 void Room2();
 void Room3();
 void Room4();
 void Room5();
 
-double deltaTime = 0.0f;    
+double deltaTime = 0.0f;
 double lastFrame = 0.0f;
 
-bool rotateLight = false; 
+bool rotateLight = false;
 GLuint VAO, VBO, EBO;
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -731,7 +601,7 @@ void main(int argc, char** argv)
 	if (window == NULL) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
-		
+
 	}
 
 	glfwMakeContextCurrent(window);
@@ -763,6 +633,8 @@ void main(int argc, char** argv)
 	unsigned int floorTexture = CreateTexture(strExePath + "\\ColoredFloor.png");
 	unsigned int wallTexture = CreateTexture(strExePath + "\\Wall.jpg");
 	unsigned int dodoBirdtexture = CreateTexture(strExePath + "\\dinosaur.jpg");
+	unsigned int duckTexture = CreateTexture(strExePath + "\\Skull.jpg");
+	unsigned int statueTexture = CreateTexture(strExePath + "\\Skull.jpg");
 
 	// configure depth map FBO
 	// -----------------------
@@ -851,6 +723,27 @@ void main(int argc, char** argv)
 		glCullFace(GL_BACK);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
+		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+		glClear(GL_DEPTH_BUFFER_BIT);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, duckTexture);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_FRONT);
+		renderDuck(shadowMappingDepthShader);
+		glCullFace(GL_BACK);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+		glClear(GL_DEPTH_BUFFER_BIT);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, statueTexture);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_FRONT);
+		renderDuck(shadowMappingDepthShader);
+		glCullFace(GL_BACK);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
 		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
@@ -915,6 +808,20 @@ void main(int argc, char** argv)
 		renderScene(shadowMappingShader);
 
 		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, duckTexture);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, depthMap);
+		glDisable(GL_CULL_FACE);
+		renderDuck(shadowMappingShader);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, statueTexture);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, depthMap);
+		glDisable(GL_CULL_FACE);
+		renderDuck(shadowMappingShader);
+
+		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, wallTexture);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, depthMap);
@@ -938,7 +845,7 @@ void main(int argc, char** argv)
 
 
 
-		//Skybox *skybox = new Skybox();
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 
@@ -1209,7 +1116,7 @@ void dodoBird()
 		std::vector<float> indicess;
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/dodo.obj");
+		Loader.LoadFile("dodo.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
@@ -1274,6 +1181,164 @@ void dodoBird()
 	glBindVertexArray(0);
 }
 
+GLuint duckVAO, duckVBO, duckEBO;
+void duck()
+{
+	if (trexTopVAO == 0)
+	{
+
+		std::vector<float> verticess;
+		std::vector<float> indicess;
+
+
+		Loader.LoadFile("duck.obj");
+		object::Mesh curMesh = Loader.LoadedMeshes[0];
+		int size = curMesh.Vertices.size();
+
+		for (int j = 0; j < curMesh.Vertices.size(); j++)
+		{
+
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 10);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Z - 3);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 10);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Z - 3);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 10);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
+		}
+		for (int j = 0; j < verticess.size(); j++)
+		{
+			vertices[j] = verticess.at(j);
+		}
+
+		for (int j = 0; j < curMesh.Indices.size(); j++)
+		{
+
+			indicess.push_back((float)curMesh.Indices[j]);
+
+		}
+		for (int j = 0; j < curMesh.Indices.size(); j++)
+		{
+			indices[j] = indicess.at(j);
+		}
+
+		glGenVertexArrays(1, &duckVAO);
+		glGenBuffers(1, &duckVBO);
+		glGenBuffers(1, &duckEBO);
+		// fill buffer
+		glBindBuffer(GL_ARRAY_BUFFER, duckVBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, duckEBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_DYNAMIC_DRAW);
+		// link vertex attributes
+		glBindVertexArray(duckVAO);
+		glEnableVertexAttribArray(0);
+
+
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+	}
+}
+
+void renderDuck(const Shader& shader)
+{
+	glm::mat4 model;
+	model = glm::mat4();
+	model = glm::translate(model, glm::vec3(0.0f, 0.99f, 0.0f));
+	model = glm::scale(model, glm::vec3(.2f));
+	shader.SetMat4("model", model);
+	duck();
+
+
+}
+
+GLuint statueVAO, statueVBO, statueEBO;
+void statue()
+{
+	if (trexTopVAO == 0)
+	{
+
+		std::vector<float> verticess;
+		std::vector<float> indicess;
+
+
+		Loader.LoadFile("shagStanding.obj");
+		object::Mesh curMesh = Loader.LoadedMeshes[0];
+		int size = curMesh.Vertices.size();
+
+		for (int j = 0; j < curMesh.Vertices.size(); j++)
+		{
+
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 5);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 5);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 5);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
+		}
+		for (int j = 0; j < verticess.size(); j++)
+		{
+			vertices[j] = verticess.at(j);
+		}
+
+		for (int j = 0; j < curMesh.Indices.size(); j++)
+		{
+
+			indicess.push_back((float)curMesh.Indices[j]);
+
+		}
+		for (int j = 0; j < curMesh.Indices.size(); j++)
+		{
+			indices[j] = indicess.at(j);
+		}
+
+		glGenVertexArrays(1, &statueVAO);
+		glGenBuffers(1, &statueVBO);
+		glGenBuffers(1, &statueEBO);
+		// fill buffer
+		glBindBuffer(GL_ARRAY_BUFFER, statueVBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, statueEBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices, GL_DYNAMIC_DRAW);
+		// link vertex attributes
+		glBindVertexArray(statueVAO);
+		glEnableVertexAttribArray(0);
+
+
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+	}
+}
+
+void renderStatue(const Shader& shader)
+{
+	glm::mat4 model;
+	model = glm::mat4();
+	model = glm::translate(model, glm::vec3(0.0f, 0.99f, 0.0f));
+	model = glm::scale(model, glm::vec3(.2f));
+	shader.SetMat4("model", model);
+	statue();
+
+
+}
+
+
+
 void upperDino()
 {
 	if (trexTopVAO == 0)
@@ -1283,20 +1348,20 @@ void upperDino()
 		std::vector<float> indicess;
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/Trex.obj");
+		Loader.LoadFile("Trex.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[1];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 10);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 10);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X+10);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 10);
 			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
 		}
 		for (int j = 0; j < verticess.size(); j++)
@@ -1359,21 +1424,21 @@ void bottomDino()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/Trex.obj");
+		Loader.LoadFile("Trex.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+10);
-			verticess.push_back((float)curMesh.Vertices[j].Position.Y );
-			verticess.push_back((float)curMesh.Vertices[j].Position.Z );
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 10);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 10);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Y );
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Z );
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
 			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 10);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y );
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y);
 		}
 		for (int j = 0; j < verticess.size(); j++)
 		{
@@ -1435,7 +1500,7 @@ void Room()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[0];
 		int size = curMesh.Vertices.size();
 
@@ -1513,7 +1578,7 @@ void Room1()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		for (int i = 0; i < Loader.LoadedMeshes.size(); i++)
 		{
 			object::Mesh curMesh = Loader.LoadedMeshes[1];
@@ -1593,7 +1658,7 @@ void Room2()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		for (int i = 0; i < Loader.LoadedMeshes.size(); i++)
 		{
 			object::Mesh curMesh = Loader.LoadedMeshes[2];
@@ -1673,7 +1738,7 @@ void Room3()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[3];
 		int size = curMesh.Vertices.size();
 
@@ -1751,7 +1816,7 @@ void Room4()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[4];
 		int size = curMesh.Vertices.size();
 
@@ -1829,21 +1894,21 @@ void Room5()
 
 
 
-		Loader.LoadFile("C:/Users/Alex Lung/Desktop/Clone/Museum/Debug/room.obj");
+		Loader.LoadFile("room.obj");
 		object::Mesh curMesh = Loader.LoadedMeshes[5];
 		int size = curMesh.Vertices.size();
 
 		for (int j = 0; j < curMesh.Vertices.size(); j++)
 		{
 
-			verticess.push_back((float)curMesh.Vertices[j].Position.X+100);
-			verticess.push_back((float)curMesh.Vertices[j].Position.Y+100);
+			verticess.push_back((float)curMesh.Vertices[j].Position.X + 100);
+			verticess.push_back((float)curMesh.Vertices[j].Position.Y + 100);
 			verticess.push_back((float)curMesh.Vertices[j].Position.Z);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.X+100);
-			verticess.push_back((float)curMesh.Vertices[j].Normal.Y+100);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.X + 100);
+			verticess.push_back((float)curMesh.Vertices[j].Normal.Y + 100);
 			verticess.push_back((float)curMesh.Vertices[j].Normal.Z);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X+100);
-			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y+100);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.X + 100);
+			verticess.push_back((float)curMesh.Vertices[j].TextureCoordinate.Y + 100);
 		}
 		for (int j = 0; j < verticess.size(); j++)
 		{

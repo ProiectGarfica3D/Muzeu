@@ -1,90 +1,108 @@
 ﻿  Museum.cpp
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\OBJ_Loader.h(652,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\OBJ_Loader.h(689,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\OBJ_Loader.h(695,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\OBJ_Loader.h(949,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(715,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1216,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1228,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1233,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1239,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1241,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1241,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1241,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1241,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1241,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1290,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1302,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1307,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1313,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1315,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1315,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1315,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1315,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1315,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1366,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1378,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1383,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1389,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1391,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1391,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1391,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1391,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1391,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1442,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1454,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1459,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1465,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1467,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1467,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1467,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1467,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1467,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1517,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1522,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1534,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1539,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1545,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1547,29): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1547,29): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1547,29): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1547,29): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1547,29): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1597,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1602,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1614,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1619,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1625,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1627,29): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1627,29): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1627,29): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1627,29): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1627,29): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1680,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1692,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1697,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1703,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1705,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1705,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1705,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1705,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1705,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1758,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1770,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1775,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1781,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1783,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1783,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1783,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1783,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1783,28): warning C4244:         ]
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1836,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1848,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1853,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1859,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1861,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1861,28): warning C4244:         with
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1861,28): warning C4244:         [
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1861,28): warning C4244:             _Ty=float
-C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Museum\Museum.cpp(1861,28): warning C4244:         ]
-  Museum.vcxproj -> C:\Users\Alex Lung\Desktop\MuzeuNEw\Museum\Debug\Museum.exe
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\OBJ_Loader.h(652,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\OBJ_Loader.h(689,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\OBJ_Loader.h(695,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\OBJ_Loader.h(949,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(585,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1123,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1135,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1140,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1146,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1148,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1148,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1148,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1148,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1148,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1198,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1210,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1215,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1221,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1223,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1223,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1223,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1223,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1223,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1276,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1288,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1293,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1299,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1301,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1301,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1301,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1301,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1301,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1355,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1367,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1372,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1378,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1380,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1380,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1380,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1380,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1380,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1431,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1443,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1448,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1454,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1456,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1456,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1456,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1456,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1456,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1507,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1519,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1524,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1530,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1532,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1532,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1532,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1532,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1532,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1582,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1587,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1599,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1604,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1610,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1612,29): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1612,29): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1612,29): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1612,29): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1612,29): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1662,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1667,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1679,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1684,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1690,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1692,29): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1692,29): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1692,29): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1692,29): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1692,29): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1745,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1757,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1762,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1768,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1770,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1770,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1770,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1770,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1770,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1823,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1835,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1840,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1846,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1848,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1848,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1848,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1848,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1848,28): warning C4244:         ]
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1901,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1913,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1918,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1924,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1926,28): warning C4244: '=': conversion from '_Ty' to 'unsigned int', possible loss of data
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1926,28): warning C4244:         with
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1926,28): warning C4244:         [
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1926,28): warning C4244:             _Ty=float
+C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Museum\Museum.cpp(1926,28): warning C4244:         ]
+  Museum.vcxproj -> C:\Users\Joni\source\repos\Grafica3D\Muzeu\Museum\Debug\Museum.exe
